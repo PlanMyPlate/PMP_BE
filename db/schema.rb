@@ -10,19 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_25_172421) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_26_174122) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "calendar_recipes", force: :cascade do |t|
+    t.datetime "date"
+    t.string "mealtype"
+    t.bigint "recipe_id", null: false
+    t.bigint "calendar_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["calendar_id"], name: "index_calendar_recipes_on_calendar_id"
+    t.index ["recipe_id"], name: "index_calendar_recipes_on_recipe_id"
+  end
+
+  create_table "calendars", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "recipes", force: :cascade do |t|
     t.string "name"
-    t.string "directions"
+    t.string "description"
     t.string "ingredients"
+    t.string "directions"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "user_recipes", force: :cascade do |t|
+    t.boolean "favorite"
     t.bigint "user_id", null: false
     t.bigint "recipe_id", null: false
     t.datetime "created_at", null: false
@@ -39,6 +57,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_25_172421) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "calendar_recipes", "calendars"
+  add_foreign_key "calendar_recipes", "recipes"
   add_foreign_key "user_recipes", "recipes"
   add_foreign_key "user_recipes", "users"
 end
