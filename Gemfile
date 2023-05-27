@@ -44,6 +44,7 @@ gem "bootsnap", require: false
 gem 'figaro'
 gem 'faraday'
 gem 'jsonapi-serializer'
+gem 'simplecov', require: false, group: :test
 # Use Sass to process CSS
 # gem "sassc-rails"
 
