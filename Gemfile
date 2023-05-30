@@ -41,7 +41,10 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
-
+gem 'figaro'
+gem 'faraday'
+gem 'jsonapi-serializer'
+gem 'simplecov', require: false, group: :test
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -51,6 +54,15 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'pry'
+  gem 'rspec-rails'
+  gem 'simplecov'
+  gem 'capybara'
+  gem 'shoulda-matchers', '~> 5.0'
+  gem 'webmock'
+  gem 'vcr'
 end
 
 group :development do
