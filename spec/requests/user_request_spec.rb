@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'User Login' do 
+RSpec.describe 'User Login', :vcr do 
   it 'creates a new user' do 
     user1 = { name: Faker::Movies::HarryPotter.character, 
     email: Faker::Internet.email, 

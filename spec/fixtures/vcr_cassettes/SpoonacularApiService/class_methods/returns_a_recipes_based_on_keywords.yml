@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.spoonacular.com/recipes/complexSearch?apiKey=a3a3802becfc4d6eaaa3caeb1f15ecdd&number=3&query=Italian
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.5
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 02 Jun 2023 21:54:07 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '207'
+      Connection:
+      - keep-alive
+      Allow-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - Authorization, UserId, Hash, Name, Password, Accept, Accept-Language, x-api-key,
+        Content-Language, Content-Type, Cache-Control, Origin, X-Requested-With
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, OPTIONS, DELETE, PUT
+      Allow-Control-Allow-Methods:
+      - GET, HEAD, POST, OPTIONS, DELETE, PUT
+      X-Api-Quota-Request:
+      - '1.03'
+      X-Api-Quota-Used:
+      - '3.09'
+      X-Api-Quota-Left:
+      - '146.91'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=EZ0x%2BsDkLzKxyTLLJOVoOTmylqr%2FOUvaWn9Y%2FCw4pru3%2FLxGMD3Xt1RzCpIe9%2BMqjqAaeJMkukIicMaBn9zrvYw8pNXmU85rEdmS5cxUn40jyXoDkicZ0Gjm%2B8RA96icuSdyJ5Mk0AhdgGPQ40w8IYI%3D"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 7d12eeda7918281a-SEA
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"results":[{"id":648279,"title":"Italian Tuna Pasta","image":"https://spoonacular.com/recipeImages/648279-312x231.jpg","imageType":"jpg"},{"id":648119,"title":"Italian
+        Fig Cookies","image":"https://spoonacular.com/recipeImages/648119-312x231.jpg","imageType":"jpg"},{"id":648183,"title":"Italian
+        Panna Cotta","image":"https://spoonacular.com/recipeImages/648183-312x231.jpg","imageType":"jpg"}],"offset":0,"number":3,"totalResults":275}'
+  recorded_at: Fri, 02 Jun 2023 21:54:07 GMT
+recorded_with: VCR 6.1.0
