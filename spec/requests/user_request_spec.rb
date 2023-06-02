@@ -14,7 +14,6 @@ RSpec.describe 'User Login' do
     expect(response).to be_successful
 
     expect(response).to have_http_status(201)
-    
     expect(new_user).to be_a(Hash)
     expect(new_user.count).to eq(1)
     expect(new_user).to have_key(:data)
@@ -37,7 +36,7 @@ RSpec.describe 'User Login' do
     email: 'unoriginal@gmail.com', password: 'weeeee'}
 
     headers = { 'CONTENT_TYPE' => 'application/json' }
-    post '/users', headers: headers, params: JSON.generate(user1)
+    post '/users', headers: headers, params: JSON.generate(user_params)
 
     new_user = User.last
     new_user = JSON.parse(response.body, symbolize_names: true)
