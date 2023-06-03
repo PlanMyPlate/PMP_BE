@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe SpoonacularApiService do 
+RSpec.describe SpoonacularApiService, :vcr do 
   describe 'class methods' do 
     it 'returns a recipes based on keywords' do 
       response = SpoonacularApiService.get_recipe('Italian')
